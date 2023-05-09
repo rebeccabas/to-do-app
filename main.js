@@ -24,8 +24,20 @@ function CreateNewTodo () {
 	Save();
 }
 
+/* <div class="item">
+	<input type="checkbox" />
+	<input 
+		type="text" 
+		value="Todo content goes here" 
+		disabled />
+	<div class="actions">
+		<button class="material-icons">edit</button>
+		<button class="material-icons remove-btn">remove_circle</button>
+	</div>
+</div> */
 
-function CreateNewTodoElement(item){
+
+function CreateTodoElement(item){
     const item_el = document.createElement("div");
     item_el.classList.add("item");
 
@@ -70,7 +82,36 @@ function CreateNewTodoElement(item){
         }
 
         Save();
-    })
+    });
+
+    input_el.addEventListener("input",() =>{
+        item.text = input_el.value;
+    });
+
+    input_el.addEventListener("blur", () =>{
+        input_el.setAttribute("disabled");
+        Save();
+    });
+
+    edit_btn_el.addEventListener("click", () =>{
+        input_el.removeAttribute("disabled");
+		input_el.focus();
+    });
+
+	remove_btn_el.addEventListener("click", () => {
+		todos = todos.filter(t => t.id != item.id);
+
+		item_el.remove();
+
+		Save();
+	});
+
+    return { item_el, input_el, edit_btn_el, remove_btn_el }
+
+
+
+
+
 }
 
 function Save(){
