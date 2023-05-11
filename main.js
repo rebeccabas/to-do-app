@@ -24,17 +24,6 @@ function CreateNewTodo () {
 	Save();
 }
 
-/* <div class="item">
-	<input type="checkbox" />
-	<input 
-		type="text" 
-		value="Todo content goes here" 
-		disabled />
-	<div class="actions">
-		<button class="material-icons">edit</button>
-		<button class="material-icons remove-btn">remove_circle</button>
-	</div>
-</div> */
 function CreateTodoElement(item) {
 	const item_el = document.createElement("div");
 	item_el.classList.add("item");
