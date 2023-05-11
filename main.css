@@ -40,13 +40,13 @@ main {
 }
 
 .app header h1 {
-	color: #fff;
+	color: #e8e2e2;
 	font-size: 24px;
 	font-weight: 400;
 }
 
 .app header button {
-	color: #fff;
+	color: #e9e4e4;
 	font-size: 18px;
 	border-bottom: 2px solid #fff;
 	text-transform: uppercase;
